@@ -1,6 +1,6 @@
 # botDAICEx
 
-*Bot for selling shirts on Facebook Messenger. Payment via PagSeguro (Invoice).*
+**Bot for selling shirts on Facebook Messenger. Payment via PagSeguro (Invoice).**
 
 ##Features:
 
