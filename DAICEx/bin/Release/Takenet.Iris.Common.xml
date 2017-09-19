@@ -1,0 +1,1540 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Takenet.Iris.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Takenet.Iris.Common.AggregateConsumer`1">
+            <summary>
+            Defines a consumer that writes in multiple targets.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:Takenet.Iris.Common.IConsumer`1" />
+        </member>
+        <member name="M:Takenet.Iris.Common.AggregateConsumer`1.#ctor(System.Collections.Generic.IEnumerable{Takenet.Iris.Common.IConsumer{`0}},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Iris.Common.AggregateConsumer`1"/> class.
+            </summary>
+            <param name="consumers">The consumers.</param>
+            <param name="allShouldSucceed">if set to <c>true</c> [all should succeed].</param>
+            <exception cref="T:System.ArgumentException">
+            The consumers list is empty
+            or
+            One or more consumers are invalid
+            </exception>
+        </member>
+        <member name="M:Takenet.Iris.Common.AggregateConsumer`1.SendAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Tries to send an instance of <see cref="!:T" />.
+            </summary>
+            <param name="item"></param>
+            <param name="cancellationToken"></param>
+            <returns>
+            Indicates if the item was successfully sent.
+            </returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.BufferBlockAsyncQueue`1">
+            <summary>
+            Adapts the IAsyncQueue interface to the TPL Dataflow BufferBlock.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Takenet.Iris.Common.Cache`1">
+            <summary>
+            Defines a simple memory cache service.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:Takenet.Iris.Common.ICache`1" />
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Takenet.Iris.Common.Cache`1.#ctor(System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Iris.Common.Cache`1" /> class.
+            </summary>
+            <param name="pollingInterval">The polling interval.</param>
+        </member>
+        <member name="M:Takenet.Iris.Common.CancellationTokenExtensions.AsTask(System.Threading.CancellationToken)">
+            <summary>
+            Creates a tasks that completes after the passed cancellation token is cancelled.
+            http://stackoverflow.com/questions/18670111/task-from-cancellation-token
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Takenet.Iris.Common.Contents.AccessKey.Id">
+            <summary>
+            The key id, for further reference.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Contents.AccessKey.Account">
+            <summary>
+            The account identity of the key.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Contents.AccessKey.Key">
+            <summary>
+            The base64 representation of the actual key. This value can be retrieved only in the moment of the creation.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Contents.AccessKey.Purpose">
+            <summary>
+            The key descriptive purpose.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Contents.AccessKey.Expiration">
+            <summary>
+            The key expiration date.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Contents.AccessKey.Requirer">
+            <summary>
+            The account that required the access key, in case of a guest access requesting an key for an alternative address.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.DataflowUtils.CreateUnorderedTransformBlock``2(System.Func{``0,``1},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)">
+            <summary>
+            Creates a transform block that processes the messages in unordered way.
+            http://stackoverflow.com/questions/22893908/how-can-i-specify-an-unordered-execution-block-using-the-tpl-dataflow-library
+            </summary>
+            <typeparam name="TInput">The type of the input.</typeparam>
+            <typeparam name="TOutput">The type of the output.</typeparam>
+            <param name="func">The function.</param>
+            <param name="options">The options.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DataflowUtils.CreateUnorderedTransformBlock``2(System.Func{``0,System.Threading.Tasks.Task{``1}},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)">
+            <summary>
+            Creates a transform block that processes the messages in unordered way.
+            http://stackoverflow.com/questions/22893908/how-can-i-specify-an-unordered-execution-block-using-the-tpl-dataflow-library
+            </summary>
+            <typeparam name="TInput">The type of the input.</typeparam>
+            <typeparam name="TOutput">The type of the output.</typeparam>
+            <param name="func">The function.</param>
+            <param name="options">The options.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DictionaryExtensions.ToNameValue``2(System.Collections.Generic.IDictionary{``0,``1},System.Char,System.Char)">
+            <summary>
+            Converts the dictionary to a name/value string.
+            </summary>
+            <param name="dictionary">The dictionary.</param>
+            <param name="equality">The equality char.</param>
+            <param name="separator">The separator char.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainRoleExtensions.IsDomainAuthority(Lime.Protocol.Security.DomainRole)">
+            <summary>
+            Determines whether the specified <see cref="T:Lime.Protocol.Security.DomainRole"/> refers to a domain authority.
+            </summary>
+            <param name="domainRole">The domain role.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainStringExtensions.AppendWildcardPrefix(System.String)">
+            <summary>
+            Appends an wildcard prefix (*.) in front of the domain name.
+            </summary>
+            <param name="domain">The domain.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainStringExtensions.AppendDomainLabel(System.String,System.String)">
+            <summary>
+            Appends an label prefix in front of the domain name.
+            </summary>
+            <param name="domain">The domain.</param>
+            <param name="label">The label.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainStringExtensions.TrimWildcardPrefix(System.String)">
+            <summary>
+            Trims the wildcard prefix (*.) of a domain name, if present.
+            </summary>
+            <param name="domain">The domain.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainStringExtensions.TrimDomainLabels(System.String,System.Int32)">
+            <summary>
+            Strip labels of a domain name.
+            </summary>
+            <param name="domain"></param>
+            <param name="total"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainStringExtensions.IsDomainMatch(System.String,System.String,System.Boolean)">
+            <summary>
+            Determines whether the specified domain matches with the current domain, considering an wildcard comparison.
+            </summary>
+            <param name="candidateDomain">The candidate domain.</param>
+            <param name="domain">The domain.</param>
+            <param name="twoWay">if set to <c>true</c> [two way].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainStringExtensions.IsSubdomainOf(System.String,System.String)">
+            <summary>
+            Determines whether the domain is a sub-domain of the specified domain.
+            </summary>
+            <param name="subDomain">The sub domain.</param>
+            <param name="domain">The domain.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">
+            </exception>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainStringExtensions.IsEqualsOrSubdomainOf(System.String,System.String)">
+            <summary>
+            Determines whether the domain is the same or a subdomain of the specified.
+            </summary>
+            <param name="candidateDomain">The candidate domain.</param>
+            <param name="domain">The domain.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainStringExtensions.IsWildcardDomain(System.String)">
+            <summary>
+            Determines whether the domain is a wildcard.
+            </summary>
+            <param name="domain">The domain.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.DomainStringExtensions.GetRootWildcardDomain(System.String)">
+            <summary>
+            Gets the root wildcard domain of the specified value.
+            </summary>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.ExceptionExtensions.ToReasonEx(System.Exception)">
+            <summary>
+            Get as reason for an exception.
+            TODO: Replace the ToReason method in Lime.Protocol.UtilExtensions
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.FuncExtensions.ToConsumer``1(System.Func{``0,System.Threading.Tasks.Task})">
+            <summary>
+            Creates an <see cref="T:Takenet.Iris.Common.IConsumer`1"/> instance from the specified delegate.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="consumerFunc">The consumer function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.FuncExtensions.ToConsumer``1(System.Func{``0,System.Threading.Tasks.Task{System.Boolean}})">
+            <summary>
+            Creates an <see cref="T:Takenet.Iris.Common.IConsumer`1"/> instance from the specified delegate.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="consumerFunc">The consumer function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.FuncExtensions.ToConsumer``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}})">
+            <summary>
+            Creates an <see cref="T:Takenet.Iris.Common.IConsumer`1"/> instance from the specified delegate.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="consumerFunc">The consumer function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.FuncExtensions.ToProducer``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Creates an <see cref="T:Takenet.Iris.Common.IProducer`1"/> instance from the specified delegate.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="producerFunc">The producer function.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.FuncExtensions.ToProducer``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Creates an <see cref="T:Takenet.Iris.Common.IProducer`1"/> instance from the specified delegate.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="producerFunc">The producer function.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.ActivateAttribute">
+            <summary>
+            Indicates that the IService class should be activated on the server initialization.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.ActivateAttribute.RegistrableType">
+            <summary>
+            Gets or sets the type of the registrable that allows the service register its own dependencies in an isolate container.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.ActivateAttribute.PreserveDiagnostics">
+            <summary>
+            Indicates if the diagnostics types (ILogger, IExceptionHandler and ITracer) registrations made by the service should be keep and not overridden by the activator.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.ActivateAttribute.ConfigurationValuePrefix">
+            <summary>
+            Determine the prefix for the configuration value provider keys.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.ActivateAttribute.Tier">
+            <summary>
+            Gets or sets the service tier, which determines the activation order of the service.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.ActivateAttribute.Group">
+            <summary>
+            Gets or sets the service activation group name.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.AppSettingsConfigurationValueProvider">
+            <summary>
+            Search for the configuration values in the appSettings section of the App.config or Web.config files.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Hosting.CertificateExtensions.SERVER_AUTHENTICATION_OID">
+            <summary>
+            X.509 Enhanced Key Usage Oid For Server Authentication
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.CertificateExtensions.IsDomainAuthority(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Checks if this is a domain certificate
+            </summary>
+            <param name="certificate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.CertificateExtensions.IsValidDomainSubject(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String)">
+            <summary>
+            Determines whether the specified domain is a valid subject of the certificate.
+            </summary>
+            <param name="certificate">The certificate.</param>
+            <param name="domain">The domain.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.ConfigurationBase">
+            <summary>
+            Helper class that dynamically set configuration values based on a <see cref="T:Takenet.Iris.Common.Hosting.IConfigurationValueProvider"/> instance and a conventions configuration object.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.ContainerExtensions.RegisterCommon(SimpleInjector.Container)">
+            <summary>
+            Register the types from the 
+            Takenet.Iris.Common assembly.
+            </summary>
+            <param name="container">The container.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.ContainerExtensions.RegisterCommonRoot(SimpleInjector.Container)">
+            <summary>
+            Register the types from the 
+            Takenet.Iris.Common namespace.
+            </summary>
+            <param name="container">The container.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.ContainerExtensions.RegisterCommonHosting(SimpleInjector.Container)">
+            <summary>
+            Register the types from the Takenet.Iris.Common.Hosting namespace.
+            </summary>
+            <param name="container">The container.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.ContainerExtensions.RegisterMany``1(SimpleInjector.Container,System.Type[])">
+            <summary>
+            Uses RegisterAll and register each concrete type within the container, too.
+            </summary>
+            <remarks>
+            On some cases, when concrete types have dependencies, these dependencies are not
+            being resolved without registering the concrete type with container.
+            </remarks>
+            <typeparam name="TService"></typeparam>
+            <param name="container"></param>
+            <param name="serviceTypes"></param>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.ContainerExtensions.WithRequiredOptions(SimpleInjector.Container)">
+            <summary>
+            Apply the required options in the container instance.
+            </summary>
+            <param name="container">The container.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.ContainerServiceBase">
+            <summary>
+            Base service to contain multiple services.
+            </summary>
+            <seealso cref="T:Takenet.Iris.Common.Hosting.ServiceBase" />
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IActivatable">
+            <summary>
+            Provides information about an activatable service.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IActivatable.RegistrableType">
+            <summary>
+            Gets or sets the type of the registrable that allows the service register its own dependencies in an isolate container.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IActivatable.PreserveDiagnostics">
+            <summary>
+            Indicates if the diagnostics types (ILogger, IExceptionHandler and ITracer) registrations made by the service should be keep and not overridden by the activator.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IActivatable.ConfigurationValuePrefix">
+            <summary>
+            Determine the prefix for the configuration value provider keys.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IActivatable.Tier">
+            <summary>
+            Gets or sets the service tier, which determines the activation order of the service.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IActivatable.Group">
+            <summary>
+            Gets or sets the service activation group name.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IConfigurationValueProvider">
+            <summary>
+            Defines a service that provide configuration strings.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.IConfigurationValueProvider.GetConfigurationValue(System.String)">
+            <summary>
+            Gets the value of a configuration string.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IContainer">
+            <summary>
+            Defines a type registration service.
+            </summary>
+            <seealso cref="T:System.IServiceProvider" />
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IDomainInformation">
+            <summary>
+            Provides informations about the current domain.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IDomainInformation.Name">
+            <summary>
+            Gets the full qualified domain name. 
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IHostConfiguration">
+            <summary>
+            Defines configuration for service activation.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IHostConfiguration.StartupTimeout">
+            <summary>
+            Timeout to the service to start.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IHostConfiguration.StopTimeout">
+            <summary>
+            Timeout to the service to stop.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IHostConfiguration.ServiceActivationGroups">
+            <summary>
+            Gets the service groups to be activated in the service initialization.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IMachineEnvironment">
+            <summary>
+            Provides information about the current machine environment.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IMachineEnvironment.MachineName">
+            <summary>
+            Gets the machine name.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IMachineEnvironment.NetworkAddress">
+            <summary>
+            Gets the machine network address to allow connections from other servers.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IRegistrable">
+            <summary>
+            Defines a registration service.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.IRegistrable.RegisterTo(SimpleInjector.Container)">
+            <summary>
+            Registers to the specified container.
+            The container is exclusive for every IService instance, but is linked to a parent container for resolving not found types.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IServiceActivator">
+            <summary>
+            Defines a service activator worker. 
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IServiceActivator.ServiceProviders">
+            <summary>
+            Gets the associated IServiceProvider for each registered service.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IServiceActivator.ActivationGroups">
+            <summary>
+            Gets the group names for activation.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IServiceActivator.OverrideTypes">
+            <summary>
+            Gets the types which should be overwritten in the activated service containers by parent container instances.
+            </summary>        
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IServiceContainer">
+            <summary>
+            Defines a uniform service hosting infrastructure to control the lifecycle of multiple <see cref="T:Takenet.Iris.Common.Hosting.IService"/> instances.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.IServiceContainer.Add(Takenet.Iris.Common.Hosting.IService,System.Int32)">
+            <summary>
+            Adds a service to the container.
+            </summary>
+            <param name="service">The service instance.</param>
+            <param name="tier">The service tier, that can be used to create dependencies between services. Lower tier services are started first and stopped last. Services in the same tier can be started at the same time.</param>
+        </member>
+        <member name="P:Takenet.Iris.Common.Hosting.IServiceContainer.Count">
+            <summary>
+            Gets the total of registered services.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IServiceMonitor">
+            <summary>
+            Defines a monitor for services execution tasks which restarts it when they became faulted.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.IServiceMonitor.Monitor(Takenet.Iris.Common.Hosting.IService,System.TimeSpan)">
+            <summary>
+            Attaches a monitoring task to the specified service.
+            </summary>
+            <param name="service">The service to monitor.</param>
+            <param name="delay">The delay to restart the service when it became faulted</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IStartable">
+            <summary>
+            Defines a service that can be started.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.IStartable.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Starts the execution of the service.
+            </summary>
+            <param name="cancellationToken">Token to allow the abortion of the service start</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.StartableExtensions.StartIfStartableAsync``1(``0,System.Threading.CancellationToken)">
+            <summary>
+            Calls the StartAsync method if the object is an <see cref="T:Takenet.Iris.Common.Hosting.IStartable"/> instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value">The value.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IWorkerContainer">
+            <summary>
+            Defines a uniform service hosting infrastructure to control the lifecycle of multiple <see cref="T:Takenet.Iris.Common.IWorker"/> instances.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.PrefixConfigurationValueProvider">
+            <summary>
+            Search values in an underlying provider putting a prefix in the key names.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.ServiceActivator">
+            <summary>
+            Implements a <see cref="T:Takenet.Iris.Common.Hosting.IService"/> activator infrastructure.
+            </summary>
+            <seealso cref="T:Takenet.Iris.Common.Hosting.ServiceBase" />
+            <seealso cref="T:Takenet.Iris.Common.Hosting.IServiceActivator" />
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.ServiceBase">
+            <summary>
+            Base class for building services.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.ReferencesUtil.LoadAssembliesAndReferences(System.String,System.String,System.Func{System.Reflection.AssemblyName,System.Boolean},System.Boolean)">
+            <summary>
+            Loads all assemblies and its references in a given path.
+            </summary>
+            <param name="path">The path to look for assemblies.</param>
+            <param name="searchPattern">The search pattern.</param>
+            <param name="assemblyFilter">The assembly filter.</param>
+            <param name="ignoreExceptionLoadingReferencedAssembly">Ignore exceptions when loading a referenced assembly</param>
+            <exception cref="T:System.ArgumentNullException">
+            </exception>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.ReferencesUtil.LoadAssemblyAndReferences(System.Reflection.AssemblyName,System.Func{System.Reflection.AssemblyName,System.Boolean},System.Boolean)">
+            <summary>
+            Loads an assembly and its references.
+            Only references that are used are actually loaded, since the .NET compiler ignores assemblies that are not used in the code.
+            </summary>
+            <param name="assemblyName">Name of the assembly.</param>
+            <param name="assemblyFilter">The assembly filter.</param>
+            <param name="ignoreExceptionLoadingReferencedAssembly">Ignore exceptions when loading a referenced assembly</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.ReferencesUtil.GetAllLoadedTypes(System.Boolean,System.Boolean)">
+            <summary>
+            Gets all loaded types in the current <see cref="T:System.AppDomain"/>, except the ones in the <c>System</c> and <c>Microsoft</c> namespaces.
+            </summary>
+            <param name="loadReferences">Load all referenced assemblies before retrieving the types.</param>
+            <param name="ignoreExceptionLoadingReferencedAssembly">Ignore exceptions when loading a referenced assembly</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.Hosting.IService">
+            <summary>
+            Defines the Iris host service interface.
+            The <see cref="T:Takenet.Iris.Common.Hosting.IService"/> Execution property is cold, meaning that the value is available only after the StartAsync method is called.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.Hosting.ServiceProviderExtensions.GetService``1(System.IServiceProvider)">
+            <summary>
+            Gets the service object of the type of TService.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <param name="serviceProvider">The service provider.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.AggregateWorker">
+            <summary>
+            Defines a worker that aggregates multiple
+            instances of the interface.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopeExtensions.GetMetadataKeyValue(Lime.Protocol.Envelope,System.String)">
+            <summary>
+            Gets an envelope metadata key value.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopeExtensions.GetAndParseMetadataKeyValue``1(Lime.Protocol.Envelope,System.String,System.Func{System.String,``0})">
+            <summary>
+            Gets an envelope metadata key value.
+            </summary>        
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopeExtensions.SetMetadataKeyValue``1(Lime.Protocol.Envelope,System.String,``0)">
+            <summary>
+            Adds or updates an envelope metadata key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="envelope"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopeExtensions.SetMetadataKeyValue(Lime.Protocol.Envelope,System.String,System.String)">
+            <summary>
+            Adds or updates an envelope metadata key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="envelope"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopeExtensions.RemoveMetadataKey(Lime.Protocol.Envelope,System.String)">
+            <summary>
+            Removes an envelope metadata key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="envelope"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopeExtensions.ShallowCopyWithoutServerMetadata``1(``0)">
+            <summary>
+            Gets a shallow copy of the current <see cref="!:T"/> without the server metadata.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="envelope">The envelope.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopeExtensions.RemoveServerMetadata``1(``0)">
+            <summary>
+            Removes any server metadata keys from the envelope instance, without copying the envelope.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="envelope">The envelope.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.EnvelopePermission">
+            <summary>
+            Represents a permission to execute an action for a target.
+            </summary>    
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.#ctor(System.String,Takenet.Iris.Common.EnvelopePermission.Types,System.String,Lime.Protocol.Node)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Iris.Common.EnvelopePermission"/> class.
+            </summary>
+            <param name="action">The permission action.</param>
+            <param name="type">The type of the target.</param>
+            <param name="subtype">The subtype of the target.</param>
+            <param name="delegate">The delegate identity for the permission.</param>
+            <exception cref="T:System.ArgumentNullException">
+            action
+            or
+            type
+            </exception>
+        </member>
+        <member name="P:Takenet.Iris.Common.EnvelopePermission.Action">
+            <summary>
+            The permission action.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.EnvelopePermission.Type">
+            <summary>
+            The target of
+            the permission.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.EnvelopePermission.Subtype">
+            <summary>
+            Subtype of
+            the permission target.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.EnvelopePermission.Delegate">
+            <summary>
+            The identity delegate
+            for the permission.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.Parse(System.String)">
+            <summary>
+            Parses the specified s.
+            </summary>
+            <param name="s">The s.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" />, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.CreateMessagePermission(Lime.Protocol.MediaType,Lime.Protocol.Node)">
+            <summary>
+            Creates a new message envelope permission instance.
+            </summary>
+            <param name="mediaType">Type of the media.</param>
+            <param name="delegate">The delegate.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.CreateNotificationPermission(System.Nullable{Lime.Protocol.Event},Lime.Protocol.Node)">
+            <summary>
+            Creates a new notification envelope permission instance.
+            </summary>
+            <param name="notificationEvent">The notification event.</param>
+            <param name="delegate">The delegate.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.CreateCommandPermission(Lime.Protocol.CommandMethod,Lime.Protocol.CommandStatus,System.Uri,Lime.Protocol.Node)">
+            <summary>
+            Creates a new command envelope permission instance.
+            </summary>
+            <param name="method">The command method.</param>
+            <param name="status">The command status.</param>
+            <param name="resourceUri">The command URI resource address.</param>
+            <param name="delegate">The delegate.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.CreateCommandPermission(Lime.Protocol.CommandMethod,Lime.Protocol.CommandStatus,System.String,Lime.Protocol.Node)">
+            <summary>
+            Creates a new command envelope permission instance.
+            </summary>
+            <param name="method">The command method.</param>
+            <param name="status">The command status.</param>
+            <param name="resourceUriBaseAddress">The command URI resource base address.</param>
+            <param name="delegate">The delegate.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.EnvelopePermission.GetCommandPermissionAction(Lime.Protocol.CommandMethod,Lime.Protocol.CommandStatus)">
+            <summary>
+            Gets the command permission action.
+            </summary>
+            <param name="method">The method.</param>
+            <param name="status">The status.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">
+            Invalid command envelope
+            or
+            Invalid command envelope
+            </exception>
+        </member>
+        <member name="F:Takenet.Iris.Common.EnvelopePermission.Delegates.Self">
+            <summary>
+            Represents a delegation to the self issued node.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.EnvelopePermission.Delegates.Any">
+            <summary>
+            Represents a delegation to any identity.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.SystemLinqExpressionsExpressionExtensions">
+            <remarks>
+            Based on answer on http://stackoverflow.com/questions/12684010/how-to-create-an-expression-and-clause-from-two-expressions
+            </remarks>
+        </member>
+        <member name="M:Takenet.Iris.Common.IAsyncQueue`1.Post(`0)">
+            <summary>
+            Enqueue a new item in the queue.
+            </summary>
+            <param name="item"></param>
+            <returns>true if the item was successfully added; false otherwise.</returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.IAsyncQueue`1.TryTake(`0@)">
+            <summary>
+            Tries to take an item from the queue, if available.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.IDistributedMutex.WaitAsync(System.String,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Waits the asynchronous.
+            </summary>
+            <param name="handle">The handle name.</param>
+            <param name="timeout">The timeout to holding the lock.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.IExceptionHandler">
+            <summary>
+            Defines an exception 
+            handling service.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.IExceptionHandler.HandleExceptionAsync``1(``0,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Handles an code exception.
+            </summary>
+            <typeparam name="T">Type of the exception</typeparam>
+            <param name="exception">The exception to be handled.</param>
+            <param name="callerMemberName">Name of the called member. Do not provide this value. It should be automatically filled by the compiler.</param>
+            <param name="callerFilePath">The caller file path. Do not provide this value. It should be automatically filled by the compiler.</param>
+            <param name="callerLineNumber">The caller line number. Do not provide this value. It should be automatically filled by the compiler.</param>
+            <param name="correlationId">The correlationId for logging purporses.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.IFactory`1">
+            <summary>
+            Defines a instance factory service.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Iris.Common.IFactory`1.Create">
+            <summary>
+            Creates a new instance of <typeparamref name="T"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.IHttpClient">
+            <summary>
+            Abstract the HttpClient class.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.IHttpClient.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>        
+            Sends a HTTP request and awaits for the response.
+            </summary>
+            <param name="request">The request.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.IMsmqFactory">
+            <summary>
+            Defines a instance factory service.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Iris.Common.IMsmqFactory.Create``1(System.String,Takenet.Elephant.ISerializer{``0})">
+            <summary>
+            Creates a new instance of <typeparamref name="T"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.IPipeline`1">
+            <summary>
+            Defines a pipeline structure, that can process instances of <see cref="!:T"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Takenet.Iris.Common.IPipelineModule`1">
+            <summary>
+            Allows the inspection and changing of pipeline items.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Iris.Common.IPipelineModule`1.CanAcceptAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Determines whether the pipeline can accept the specified input.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.IPipelineModule`1.ProcessOutputAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Processes the pipeline output.
+            </summary>
+            <param name="wrapper">The output.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.IProvider`1">
+            <summary>
+            Defines an instance provider service
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Takenet.Iris.Common.IResolver`2">
+            <summary>
+            Define a service resolver.
+            </summary>
+            <typeparam name="TIdentifier"></typeparam>
+            <typeparam name="TService"></typeparam>
+        </member>
+        <member name="M:Takenet.Iris.Common.IResolver`2.Register(`0,`1)">
+            <summary>
+            Registers the specified service.
+            </summary>
+            <param name="key"></param>
+            <param name="service">The service.</param>
+        </member>
+        <member name="M:Takenet.Iris.Common.IResolver`2.GetOrDefault(`0)">
+            <summary>
+            Gets an instance of <typeparamref name="TService"/> or the default value for the type, if not available.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.IResolver`2.Unregister(`0)">
+            <summary>
+            Removes the specified registration.
+            </summary>
+            <param name="identifier">The identifier.</param>
+        </member>
+        <member name="M:Takenet.Iris.Common.ResolverExtensions.GetOrThrow``2(Takenet.Iris.Common.IResolver{``0,``1},``0)">
+            <summary>
+            Gets an instance of <typeparamref name="TService"/> or throws an exception, if not available.
+            </summary>
+            <typeparam name="TIdentifier">The type of the identifier.</typeparam>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <param name="resolver">The resolver.</param>
+            <param name="key">The key.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:Takenet.Iris.Common.IProducer`1">
+            <summary>
+            Defines a producer of <see cref="!:T"/> instances.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Iris.Common.IProducer`1.ReceiveAsync(System.Threading.CancellationToken)">
+            <summary>
+            Receives an instance of <see cref="!:T"/>.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.IConsumer`1">
+            <summary>
+            Defines a consumer of <see cref="!:T"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Iris.Common.IConsumer`1.SendAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Tries to send an instance of <see cref="!:T"/>.
+            </summary>
+            <param name="item"></param>
+            <param name="cancellationToken"></param>
+            <returns>Indicates if the item was successfully sent.</returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.IStoppable">
+            <summary>
+            Defines a service that can be stopped.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.IStoppable.Stop">
+            <summary>
+            Signals to stop the execution of the work. 
+            The loop is stopped when the Execution task is completed.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.StoppableExtensions.StopIfStoppable``1(``0)">
+            <summary>
+            Calls the Stop method if the object is an <see cref="T:Takenet.Iris.Common.IStoppable"/> instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:Takenet.Iris.Common.ICache`1">
+            <summary>
+            Defines a basic cache service.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Iris.Common.ICache`1.Contains(System.String)">
+            <summary>
+            Determines whether the cache contains the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.ICache`1.GetOrAddAsync(System.String,System.Func{System.Threading.Tasks.Task{`0}},System.Nullable{System.DateTimeOffset})">
+            <summary>
+            Gets an existing item or create a new instance and add it to the cache .
+            </summary>
+            <param name="key">The key.</param>
+            <param name="factory">The factory.</param>
+            <param name="expiration">The absolute expiration.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.ICache`1.Remove(System.String)">
+            <summary>
+            Removes the specified key from the cache.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.LazyProvider`1">
+            <summary>
+            Lazily return an instance of <paramref name="T"/>. 
+            Multiple threads can initialize, but the first to succeed 
+            will have its value cached and returned on next calls.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:Takenet.Iris.Common.ProfileDocuments.PERSISTENT_MENU_ID">
+            <summary>
+            Convention id for the persistent menu document on public profile.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.ProfileDocuments.GET_STARTED_ID">
+            <summary>
+            Convention id for the get started action document on public profile.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.ProfileDocuments.GREETING_ID">
+            <summary>
+            Convention id for the greeting document on public profile.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.ReasonCodesEx">
+            <summary>
+            Extended reason codes for Iris server.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Resources.Alias.Target">
+            <summary>
+            Gets or sets the target address that the alias will resolve to.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Resources.Alias.AliasNode">
+            <summary>
+            Gets or sets the alias address.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Resources.AccountKeyRequest.AlternativeAddress">
+            <summary>
+            The account alternative address, in case of requesting to send the access key to an alternative address, like an email or cellphone.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Resources.AccountKeyRequest.Purpose">
+            <summary>
+            The key descriptive purpose.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Resources.AccountKeyRequest.Ttl">
+            <summary>
+            The key time to live, in milliseconds.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Resources.GroupItem">
+            <summary>
+            Represents an element grouping.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Resources.GroupItem.Key">
+            <summary>
+            Gets or sets the group key.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Resources.GroupItem.Count">
+            <summary>
+            Gets or sets the group key total occurrences.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Resources.MessageBufferOptions">
+            <summary>
+            Defines the configuration of the message buffer, that automatically resend messages without "received" notifications.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.Resources.MessageBufferOptions.Retries">
+            <summary>
+            The number of times that the server should retry to send the message.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.Resources.Statistic">
+            <summary>
+            Represents metrics about a single session
+            on an Iris server
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.ALIASES">
+            <summary>
+            Template for the address aliases.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.ALIAS_IDENTITY">
+            <summary>
+            Template for a specific address alias.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.ALIAS_NODE">
+            <summary>
+            Template for a specific address alias.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.ACCOUNT_KEYS">
+            <summary>
+            Template for account keys.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.ACCOUNT_KEY">
+            <summary>
+            Template for account key.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.BUCKETS">
+            <summary>
+            Template for the bucket storage ids.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.BUCKET">
+            <summary>
+            Template for the bucket storage.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.THREADS">
+            <summary>
+            Template for the thread storage.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.THREAD">
+            <summary>
+            Template for the thread storage for an identity.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.EVENT_TRACK">
+            <summary>
+            Template for the event tracks.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.EVENT_TRACK_CATEGORY">
+            <summary>
+            Template for the event tracks categories.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.EVENT_TRACK_CATEGORY_ACTION">
+            <summary>
+            Template for the event tracks category actions.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.DELEGATIONS">
+            <summary>
+            Template for delegations.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.DELEGATIONS_IDENTITY">
+            <summary>
+            Template for delegations node
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.DELEGATIONS_NODE">
+            <summary>
+            Template for delegations node
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.DIRECTORY_ACCOUNTS">
+            <summary>
+            Template for accounts.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.DIRECTORY_ACCOUNT">
+            <summary>
+            Template for an account resource.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.DIRECTORY_ACCOUNT_KEY">
+            <summary>
+            Template for an account key.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.CONFIGURATION">
+            <summary>
+            Template for the server configuration.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.DOMAIN_CONFIGURATIONS">
+            <summary>
+            Template for the domain configurations.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.DOMAIN_CONFIGURATIONS_VALUE">
+            <summary>
+            Template for an specific domain configurations value.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.LINKED_CONTACTS">
+            <summary>
+            Template for the linked contacts.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.LINKED_CONTACT">
+            <summary>
+            Template for a specific linked contacts resource.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.MESSAGES">
+            <summary>
+            Template for the messages.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.MESSAGE">
+            <summary>
+            Template for a specific messages.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.MESSAGE_BUFFER">
+            <summary>
+            Template for a message buffer options.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.MESSAGES_HISTORY">
+            <summary>
+            Template for the messages history.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.MESSAGE_WORD_COUNT">
+            <summary>
+            Template for the message word count.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.NOTIFICATIONS">
+            <summary>
+            Template for the notifications.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.NOTIFICATION">
+            <summary>
+            Template for a specific notifications.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.SESSION_STATISTIC">
+            <summary>
+            Template for the session statistic.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.REMOTE_SESSION_DISPATCH">
+            <summary>
+            Template for the remote envelope dispatch command.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.SESSION">
+            <summary>
+            Template for the session.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.PIPELINE">
+            <summary>
+            Template for the pipeline.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.PIPELINE_SENDERS">
+            <summary>
+            Template for the pipeline senders.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.PRESENCE_INSTANCE">
+            <summary>
+            Template for presence instance.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.PROFILES">
+            <summary>
+            Template for the public profile storage ids.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.PROFILE">
+            <summary>
+            Template for the public profile storage.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.RESOURCES">
+            <summary>
+            Template for the public resource storage ids.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Resources.UriTemplates.RESOURCE">
+            <summary>
+            Template for the public resource storage 
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.SERVER_METADATA_KEY_PREFIX">
+            <summary>
+            Prefix for server metadata keys.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.ORIGINATOR_METADATA_KEY">
+            <summary>
+            Key used internally to handle routing for a different originator than the envelope 'from' property.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.ORIGINATOR_SESSION_REMOTE_NODE_METADATA_KEY">
+            <summary>
+            Key used internally to inform the originator session remote node for the envelope.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.DESTINATION_METADATA_KEY">
+            <summary>
+            Key used internally to handle routing for a different destination than the envelope 'to' property.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.DESTINATION_RESOLVE_ALIASES">
+            <summary>
+            Key used internally to determine if the server should resolve the aliases for the destination.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.INTERNAL_ID_METADATA_KEY">
+            <summary>
+            Key used internally to identify uniquely the envelope.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.DELEGATE_METADATA_KEY">
+            <summary>
+            Key used internally to identify the delegate of the envelope permissions.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.CLAIMS_METADATA_KEY">
+            <summary>
+            Key used internally to change the claims used in the pipeline. 
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.COPIED_METADATA_SUFFIX">
+            <summary>
+            Suffix for copied metadata values, to avoid collisions when repeating the metadata from a message in a notification for reference.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.COPIED_INTERNAL_ID_METADATA_KEY">
+            <summary>
+            Key used internally to identify uniquely the envelope copied from the original message.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.DEFAULT_INSTANCE">
+            <summary>
+            The default node instance value, if not provided during the authentication.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.DOMAIN_AUTHORITY_NAME">
+            <summary>
+            The name for the domain authorities identities.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.REMOTE_DISPATCHER_NAME">
+            <summary>
+            The name for the remote dispatcher identities.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.MESSAGE_BUFFER_DEFAULT_RETRIES">
+            <summary>
+            Default value for retry attempts for the message buffer.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.MESSAGE_BUFFER_REMAINING_RETRIES_METADATA_KEY">
+            <summary>
+            Default value for retry attempts for the message buffer.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.MAX_REGISTRATION_RETRIES">
+            <summary>
+            The maximum of node registration retries in the authentication process.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.FINAL_INSTANCE_PREFIX">
+            <summary>
+            The prefix for node instances that are final, which cannot be changed by the server during the authentication process, in case of conflict.
+            In this case, the session establishment fails.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.OVERRIDDEN_INSTANCE_PREFIX">
+            <summary>
+            The prefix for node instances that are overridden, which cannot be changed by the server during the authentication process, in case of conflict.
+            In this case, the existing session is closed.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.GENERATED_METADATA_KEY_PREFIX">
+            <summary>
+            Prefix for internally generated metadata keys. This is required to reduce the change of collisions with external metadata keys.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.MESSAGE_TO_METADATA_KEY">
+            <summary>
+            The original message 'to' value for notifications.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.ENVELOPE_STORAGE_DATE_METADATA_KEY">
+            <summary>
+            The storage date for retrieved envelopes.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.MESSAGE_RESOURCE_ID_METADATA_KEY">
+            <summary>
+            The original message resource id.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.MESSAGE_RESOURCE_CULTURE_METADATA_KEY">
+            <summary>
+            The original message resource culture.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.MESSAGE_REPLACE_VARIABLES_METADATA_KEY">
+            <summary>
+            Indicates that the message content has variable values that should be replaced by the server.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.Constants.CONTACT_TEST_GROUP_NAME">
+            <summary>
+            Indicates the name of the test contact group.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.StringExtensions.IsBase64String(System.String)">
+            <summary>
+            Determines whether the string is in the Base64 representation.
+            </summary>
+            <param name="s">The s.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.StringExtensions.FromNameValue(System.String,System.Char,System.Char)">
+            <summary>
+            Converts a name/value string to a <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="equality">The equality char.</param>
+            <param name="separator">The separator char.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.StringExtensions.FromNameValue``2(System.String,System.Func{System.String,``0},System.Func{System.String,``1},System.Char,System.Char)">
+            <summary>
+            Converts a name/value string to a <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+            <param name="s">The string.</param>
+            <param name="valueParser"></param>
+            <param name="equality">The equality char.</param>
+            <param name="separator">The separator char.</param>
+            <param name="keyParser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.StringExtensions.SplitLines(System.String)">
+            <summary>
+            Splits the lines.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.ILogger">
+            <summary>
+            Utility for logging simple text messages.    
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.ILogger.WriteAsync(Takenet.Iris.Common.LogLevel,System.String,System.String,System.String,System.Object[])">
+            <summary>
+            Writes a new log message.
+            </summary>
+            <param name="level">The log event level.</param>
+            <param name="source">The source class of the message.</param>
+            <param name="correlationId">The correlation id to link related log messages.</param>
+            <param name="message">The actual message text.</param>
+            <param name="args">The arguments for formating the log message.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Iris.Common.LogLevel">
+            <summary>
+            Defines the log levels.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.LogLevel.Exception">
+            <summary>
+            Represents an exception event in the program execution.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.LogLevel.Error">
+            <summary>
+            Represents a error event in the program execution.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.LogLevel.Warning">
+            <summary>
+            Represents an recoverable error in the program execution.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.LogLevel.Debug">
+            <summary>
+            Represents a message for debugging purposes.
+            </summary>
+        </member>
+        <member name="F:Takenet.Iris.Common.LogLevel.Verbose">
+            <summary>
+            Represents verbose log message.
+            </summary>
+        </member>
+        <member name="T:Takenet.Iris.Common.IWorker">
+            <summary>
+            Defines a type that execute a work loop in the background.
+            The <see cref="T:Takenet.Iris.Common.IWorker"/> Execution property is hot, meaning that the value is available since the instantiation.
+            </summary>
+        </member>
+        <member name="P:Takenet.Iris.Common.IWorker.Execution">
+            <summary>
+            Gets the Task that represents the execution of the work.
+            </summary>
+        </member>
+        <member name="M:Takenet.Iris.Common.TypeExtensions.GetPublicProperties(System.Type)">
+            <summary>
+            Gets the public properties of the type, including inheritance.
+            http://stackoverflow.com/questions/358835/getproperties-to-return-all-properties-for-an-interface-inheritance-hierarchy
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Iris.Common.WorkerExtensions.StopAsync(Takenet.Iris.Common.IWorker,System.Threading.CancellationToken)">
+            <summary>
+            Stops the worker and awaits to the execution finishes.
+            </summary>
+            <param name="worker"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

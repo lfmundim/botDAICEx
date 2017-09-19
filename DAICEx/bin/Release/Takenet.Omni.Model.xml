@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Takenet.Omni.Model</name>
+    </assembly>
+    <members>
+        <member name="T:Takenet.Omni.Model.Attachment">
+            <summary>
+            Represents a media attachment to the message.
+            </summary>
+        </member>
+        <member name="P:Takenet.Omni.Model.Attachment.RemoteId">
+            <summary>
+            Gets or sets the media bucket storage remote id of the attachment.
+            </summary>
+            <value>
+            The remote identifier.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Attachment.RemoteUri">
+            <summary>
+            Gets or sets the remote URI for the attachment, which links to the attachment content.
+            </summary>
+            <value>
+            The remote URI.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Attachment.MimeType">
+            <summary>
+            Gets or sets the MIME media type of the content.
+            </summary>
+            <value>
+            The type of the MIME.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Attachment.MediaType">
+            <summary>
+            Gets or sets the type of the attachment.
+            </summary>
+            <value>
+            The type of the media.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Attachment.Size">
+            <summary>
+            Gets or sets the attachment size, in bytes.
+            </summary>
+            <value>
+            The size.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Attachment.ThumbnailUri">
+            <summary>
+            Gets or sets the attachment thumbnail image URI.
+            </summary>
+            <value>
+            The thumbnail URI.
+            </value>
+        </member>
+        <member name="T:Takenet.Omni.Model.AttachmentMediaType">
+            <summary>
+            Defines the attachment media type for proper handling.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.AttachmentMediaType.Unknown">
+            <summary>
+            The type is unknown.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.AttachmentMediaType.Image">
+            <summary>
+            The type is an image from the gallery.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.AttachmentMediaType.Photo">
+            <summary>
+            The type is an photo taken from the camera.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.AttachmentMediaType.Music">
+            <summary>
+            The type is a music track.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.AttachmentMediaType.Audio">
+            <summary>
+            The type is a recorded audio.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.AttachmentMediaType.Video">
+            <summary>
+            The type is a video.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.AttachmentMediaType.ProfilePictures">
+            <summary>
+            The type is a profile picture.
+            </summary>
+        </member>
+        <member name="T:Takenet.Omni.Model.OmniRecipient">
+            <summary>
+            Defines a document that supports a Omni recipient.
+            </summary>
+            <seealso cref="T:Lime.Protocol.Document" />
+        </member>
+        <member name="M:Takenet.Omni.Model.OmniRecipient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Omni.Model.OmniRecipient"/> class.
+            </summary>
+        </member>
+        <member name="P:Takenet.Omni.Model.OmniRecipient.Name">
+            <summary>
+            Gets or sets the recipient's name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.OmniRecipient.Address">
+            <summary>
+            Gets or sets the recipient's address.
+            </summary>
+            <value>
+            The address.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.OmniRecipient.OttAddress">
+            <summary>
+            Gets or sets the recipient's ott address.
+            </summary>
+            <value>
+            The ott address.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.OmniRecipient.PhotoUriString">
+            <summary>
+            Gets or sets the recipient's photo uri.
+            </summary>
+            <value>
+            The photo uri string.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.OmniRecipient.RecipientType">
+            <summary>
+            Gets or sets the recipient's type.
+            </summary>
+            <value>
+            The recipient type.
+            </value>
+        </member>
+        <member name="T:Takenet.Omni.Model.Payment">
+            <summary>
+            Represents a payment attached to the message.
+            </summary>
+        </member>
+        <member name="P:Takenet.Omni.Model.Payment.Id">
+            <summary>
+            Gets or sets the local payment id.
+            </summary>
+            <value>
+            The local identifier.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Payment.TransactionId">
+            <summary>
+            Gets or sets the payment transactionId.
+            </summary>
+            <value>
+            The transaction id.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Payment.Status">
+            <summary>
+            Gets or sets the payment status.
+            </summary>
+            <value>
+            The payment status .
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Payment.Value">
+            <summary>
+            Gets or sets the payment value.
+            </summary>
+            <value>
+            The payment value .
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Payment.ResultDate">
+            <summary>
+            Gets or sets the payment completion date.
+            </summary>
+            <value>
+            The payment completion date .
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Payment.ResultDescription">
+            <summary>
+            Gets or sets the payment result description.
+            </summary>
+            <value>
+            The result description
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Payment.RemoteId">
+            <summary>
+            Gets or sets the payment remote id, which is the same as the message id.
+            </summary>
+            <value>
+            The payment remote id.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Payment.PaymentMethod">
+            <summary>
+            Gets or sets the payment method.
+            </summary>
+            <value>
+            The payment method.
+            </value>
+        </member>
+        <member name="T:Takenet.Omni.Model.PaymentDocument">
+            <summary>
+            Defines a document that supports a payment.
+            </summary>
+            <seealso cref="T:Lime.Protocol.Document" />
+        </member>
+        <member name="M:Takenet.Omni.Model.PaymentDocument.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Omni.Model.PaymentDocument"/> class.
+            </summary>
+        </member>
+        <member name="P:Takenet.Omni.Model.PaymentDocument.Text">
+            <summary>
+            Gets or sets the text of the message.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.PaymentDocument.Payment">
+            <summary>
+            Gets or sets the payment of the message.
+            </summary>
+            <value>
+            The payment.
+            </value>
+        </member>
+        <member name="T:Takenet.Omni.Model.PaymentStatusEnum">
+            <summary>
+            Defines the payment status for proper payment processing.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.PaymentStatusEnum.Pending">
+            <summary>
+            The payment is pending.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.PaymentStatusEnum.Paid">
+            <summary>
+            The payment is paid.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.PaymentStatusEnum.InProgress">
+            <summary>
+            The payment is in progress.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.PaymentStatusEnum.Failed">
+            <summary>
+            The payment has failed.
+            </summary>
+        </member>
+        <member name="T:Takenet.Omni.Model.RecipientType">
+            <summary>
+            Defines the recipient type for proper handling.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.RecipientType.Contact">
+            <summary>
+            The type is a contact.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.RecipientType.Service">
+            <summary>
+            The type is a service.
+            </summary>
+        </member>
+        <member name="F:Takenet.Omni.Model.RecipientType.Group">
+            <summary>
+            The type is a group.
+            </summary>
+        </member>
+        <member name="T:Takenet.Omni.Model.TextWithAttachments">
+            <summary>
+            Defines a document that supports a text and multimedia attachments.
+            </summary>
+            <seealso cref="T:Lime.Protocol.Document" />
+        </member>
+        <member name="M:Takenet.Omni.Model.TextWithAttachments.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Omni.Model.TextWithAttachments"/> class.
+            </summary>
+        </member>
+        <member name="P:Takenet.Omni.Model.TextWithAttachments.Text">
+            <summary>
+            Gets or sets the text of the messages.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.TextWithAttachments.Attachments">
+            <summary>
+            Gets or sets the message attachments.
+            </summary>
+            <value>
+            The attachments.
+            </value>
+        </member>
+        <member name="T:Takenet.Omni.Model.Thread">
+            <summary>
+            Defines a document that configures a thread conversation.
+            </summary>
+            <seealso cref="T:Lime.Protocol.Document" />
+        </member>
+        <member name="M:Takenet.Omni.Model.Thread.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Omni.Model.Thread"/> class.
+            </summary>
+        </member>
+        <member name="P:Takenet.Omni.Model.Thread.CustomerName">
+            <summary>
+            Gets or sets the Name of Customer in Thread.
+            </summary>
+            <value>
+            The Name Customer in Thread.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Thread.CustomerPhotoUri">
+            <summary>
+            Gets or sets the photo URI of Customer in Thread.
+            </summary>
+            <value>
+            The Photo URI of Customer in Thread.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Thread.CustomerNode">
+            <summary>
+            Gets or sets the Node of Customer in Thread.
+            </summary>
+            <value>
+            The Node of Customer in Thread.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Thread.ServiceName">
+            <summary>
+            Gets or sets the Name of Service in Thread.
+            </summary>
+            <value>
+            The Name of Service in Thread.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Thread.ServicePhotoUri">
+            <summary>
+            Gets or sets the Photo URI of Service in Thread.
+            </summary>
+            <value>
+            The Photo URI of Service in Thread.
+            </value>
+        </member>
+        <member name="P:Takenet.Omni.Model.Thread.ServiceNode">
+            <summary>
+            Gets or sets the Node of Service in Thread.
+            </summary>
+            <value>
+            The Node of Service in Thread.
+            </value>
+        </member>
+    </members>
+</doc>

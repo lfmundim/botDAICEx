@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Takenet.MessagingHub.Client.InfoEntertainmentExtensions</name>
+    </assembly>
+    <members>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Authentication.AuthenticationUserAction">
+            <summary>
+            Represents the expected actions from the target user to be considered authenticated.
+            </summary>
+        </member>
+        <member name="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Authentication.AuthenticationUserAction.Reply">
+            <summary>
+            Expects a reply message from the target user.
+            </summary>
+        </member>
+        <member name="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Authentication.AuthenticationUserAction.Code">
+            <summary>
+            Expects a code from the target user.
+            </summary>
+        </member>
+        <member name="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Authentication.AuthenticationUserAction.Direct">
+            <summary>
+            Do not expect any input from the user.
+            </summary>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.ContainerProvider.ContainerProvider">
+            <summary>
+            Make default dependecy registration
+            </summary>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.ContainerProvider.DictionaryNoAction">
+            <summary>
+            Evaluate tokens defined on INoActionHandler implementations and execute once one is found.
+            INoActionHandler implementations must be registered on container in a way that it can return an IEnumerable of them
+            </summary>
+            <remarks>
+            On SimpleInjector INoActionHandler's could be registered using 
+            RegisterCollection{INoActionHandler}
+            </remarks>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.ContainerProvider.IFactory`1">
+            <summary>
+            Fábrica de extensões de navegação, como talkservice e eventnotificator
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.ContainerProvider.IFactory`1.GetInstance">
+            <summary>
+            Get an implementation of generic T
+            </summary>
+            <returns>implementation of generic T</returns>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.Extensions.GetNavigationAsync(Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.INavigationExtension,Lime.Protocol.Node,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get navigation creating a request with a <see cref="T:Lime.Messaging.Contents.PlainText"/> Lime message of type <see cref="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationType.Text"/>
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.Extensions.GetAndExecuteNavigationAsync(Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.INavigationExtension,Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Concatenate GetNavigationAsync and ExecuteNavigationAsync calls
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.Extensions.GetAndExecuteNavigationAsync(Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.INavigationExtension,Lime.Protocol.Node,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get and execute navigation creating a request with a <see cref="T:Lime.Messaging.Contents.PlainText"/> Lime message of type <see cref="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationType.Text"/>
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.Extensions.GetAndExecuteNavigationAsync(Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.INavigationExtension,Lime.Protocol.Message,System.Threading.CancellationToken)">
+            <summary>
+            Get and execute navigation creating a request with a <see cref="T:Lime.Protocol.Message"/>
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.Extensions.ToNavigationRequest(Lime.Protocol.Message)">
+            <summary>
+            Create a request of type <see cref="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationType.Text"/>
+            </summary>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.MPA.MpaNavigationExtension">
+            <summary>
+            MpaNavigationExtension
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.MPA.MpaNavigationExtension.GetNavigationAsync(Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationRequest,System.Threading.CancellationToken)">
+            <summary>
+            NavigateAsync
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationActions.CheckCpfFullNavigationAction">
+            <summary>
+            Validate the 'numeric' rule AND invalid numbers as 00000000000, 11111111111, etc.
+            </summary>
+        </member>
+        <member name="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationActions.WaitNavigationAction.WaitTime">
+            <summary>
+            Wait time in seconds
+            </summary>
+        </member>
+        <member name="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationActions.WaitNavigationAction.Sender">
+            <summary>
+            Sender chat state composing
+            </summary>
+        </member>
+        <member name="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationActions.WaitNavigationAction.To">
+            <summary>
+            Client to send a chatstate
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationActions.WaitNavigationAction.#ctor(System.Int32,Takenet.MessagingHub.Client.Sender.IMessagingHubSender,Lime.Protocol.Node)">
+            <summary>
+            
+            </summary>
+            <param name="waitTime">Wait time in seconds</param>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationExtensions.IEventNotificator">
+            <summary>
+            IEventNotificator
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationExtensions.IEventNotificator.RegisterEvent(Lime.Protocol.Document,Lime.Protocol.Message)">
+            <summary>
+            
+            </summary>
+            <param name="eventDocument"></param>
+            <param name="originatorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationExtensions.INoActionHandler">
+            <summary>
+            A handler for no-action token(s).
+            Works integrated with <see cref="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.ContainerProvider.DictionaryNoAction"/>
+            </summary>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationExtensions.INoActionHandler.Tokens">
+            <summary>
+            List of no-action tokens (without '#') which will be handled
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationExtensions.INoActionHandler.HandleAsync(System.String,Lime.Protocol.Message,System.Threading.CancellationToken)">
+            <summary>
+            Parse token(s) parameters and execute its behavior
+            </summary>
+            <param name="text">Message text, including the full token (with '#'), but without #noaction#</param>
+            <param name="messageOriginator">Message originating this handler</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationRequest">
+            <summary>
+            NavigationRequest 
+            </summary>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationRequest.NavigationType">
+            <summary>
+            Type of navigation.
+            </summary>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationRequest.LimeMessages">
+            <summary>
+            List of messages.
+            </summary>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationRequest.NavigationParameters">
+            <summary>
+            Navigation parameters for session.
+            </summary>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationType">
+            <summary>
+            NavigationType
+            </summary>
+        </member>
+        <member name="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationType.Text">
+            <summary>
+            Just text
+            </summary>
+        </member>
+        <member name="F:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Navigation.NavigationType.Lime">
+            <summary>
+            Lime Objects
+            </summary>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Services.IContactService">
+            <summary>
+            Service for simplify contact interations with blip contact extension
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.Services.IContactService.GetContactAsync(Lime.Protocol.Node,System.Threading.CancellationToken)">
+            <summary>
+            Get contact from chatbot's roster.
+            </summary>
+            <param name="node">User</param>
+            <param name="cancellationToken">Cancellation Token</param>
+            <returns>User contact or Default Contact</returns>
+        </member>
+        <member name="T:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings">
+            <summary>
+            Basic TalkService Settings to use in chatbot
+            </summary>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings.Uri">
+            <summary>
+            TalkService Uri 
+            </summary>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings.Context">
+            <summary>
+            TalkService Context - Example: Sexualidade, FAQSantander, POP
+            </summary>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings.ConfidenceThreshold">
+            <summary>
+            Confidence threshold of classification. Minimum classification confidence for result be consider GOOD.
+            </summary>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings.ConfidenceThresholdBound">
+            <summary>
+            Confidence threshold inferior bound of classification. Value that can be reduced from Confidence Threshold for result be consider between Good and Bad.
+            </summary>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings.CacheExpirationInMinutes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings.#ctor">
+            <summary>
+            Default Ctor
+            </summary>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Ctor with dict.
+            </summary>
+            <param name="settings">Dictionary. Must have Uri (uri), Context(string), ConfidenceThreshold(double), ConfidenceThresholdBound(double) KEYS </param>
+        </member>
+        <member name="M:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings.#ctor(System.Uri,System.String,System.Double,System.Double,System.Int64)">
+            <summary>
+            Complete CTOR
+            </summary>
+            <param name="uri">TS uri</param>
+            <param name="context">TS context</param>
+            <param name="confidenceThreshold">Minimal good classification threshold</param>
+            <param name="confidenceThresholdBound">Minimal good classification threshold bound</param>
+            <param name="cacheExpirationInMinutes">Expiration of cache</param>
+        </member>
+        <member name="P:Takenet.MessagingHub.Client.InfoEntertainmentExtensions.TalkService.Settings.Empty">
+            <summary>
+            Define an empty ts settings
+            </summary>
+        </member>
+    </members>
+</doc>

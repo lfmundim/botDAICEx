@@ -1,0 +1,702 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Takenet.Elephant</name>
+    </assembly>
+    <members>
+        <member name="M:Takenet.Elephant.EnumerableExtensions.ToSet``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a set from the enumerable.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable">The enumerable.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.EnumerableExtensions.ToSet``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Creates a set from the enumerable.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable">The enumerable.</param>
+            <param name="equalityComparer">The equality comparer.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.Group`1">
+            <summary>
+            Represents a group of <see cref="!:T"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Takenet.Elephant.Group`1.Key">
+            <summary>
+            Gets the group key.
+            </summary>
+        </member>
+        <member name="P:Takenet.Elephant.Group`1.Total">
+            <summary>
+            Gets the total of items in the group.
+            </summary>
+        </member>
+        <member name="P:Takenet.Elephant.Group`1.Items">
+            <summary>
+            Gets the group items.
+            </summary>
+        </member>
+        <member name="T:Takenet.Elephant.IBlockingQueue`1">
+            <summary>
+            Defines a queue that allows to await for messages when dequeueing.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IBlockingQueue`1.DequeueAsync(System.Threading.CancellationToken)">
+            <summary>
+            Dequeues a value from the queue, awaiting for a new value if the queue is empty.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.ICollection`1">
+            <summary>
+            Defines a collection of items.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.ICollection`1.AsEnumerableAsync">
+            <summary>
+            Gets an IEnumerable with the values of the collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.ICollection`1.GetLengthAsync">
+            <summary>
+            Gets the number of items in the collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.IDictionaryConverter`1">
+            <summary>
+            Defines a dictionary converter service.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Takenet.Elephant.IDictionaryConverter`1.Properties">
+            <summary>
+            Gets the names of the dictionary properties for the type.
+            </summary>
+            <value>
+            The properties.
+            </value>
+        </member>
+        <member name="M:Takenet.Elephant.IDictionaryConverter`1.FromDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Creates an instance of <see cref="!:T"/> from the specified dictionary instance.
+            </summary>
+            <param name="dictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.IDictionaryConverter`1.ToDictionary(`0)">
+            <summary>
+            Creates a dictionary from the specified <see cref="!:T"/> instance.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.IGroupableMap`2">
+            <summary>
+            Defines a <see cref="T:Takenet.Elephant.IMap`2"/> that support grouping queries.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IGroupableMap`2.GroupByPropertyAsync(`0,System.String)">
+            <summary>
+            Gets the groups of <see cref="!:TValue"/> using the specified property name as group key.
+            </summary>
+            <param name="key"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.IKeyQueryableMap`2">
+            <summary>
+            Defines a map that supports queries for its keys by the values.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="T:Takenet.Elephant.IList`1">
+            <summary>
+            Defines a list of items that allows duplicate values.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IList`1.AddAsync(`0)">
+            <summary>
+            Adds an item to the list.         
+            </summary>
+            <param name="value">The value.</param>        
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.IList`1.RemoveAllAsync(`0)">
+            <summary>
+            Remove all occurrences of the item in the list.
+            </summary>
+            <param name="value"></param>
+            <returns>The number of removed items</returns>
+        </member>
+        <member name="T:Takenet.Elephant.IOrderedQueryableStorage`1">
+            <summary>
+            Defines a storage that supports ordered queries.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IOrderedQueryableStorage`1.QueryAsync``2(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,``1}},System.Boolean,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Submits a query into the storage container.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <typeparam name="TOrderBy"></typeparam>
+            <param name="where"></param>
+            <param name="select"></param>
+            <param name="orderBy"></param>
+            <param name="orderByAscending"></param>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.IQueryableStorage`1">
+            <summary>
+            Defines a storage that supports queries.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IQueryableStorage`1.QueryAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Submits a query into the storage container.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="where"></param>
+            <param name="select"></param>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.IAsyncEnumerator`1">
+            <summary>
+            Defines a generic asynchronous iterator.
+            </summary>
+        </member>
+        <member name="M:Takenet.Elephant.IAsyncEnumerator.MoveNextAsync(System.Threading.CancellationToken)">
+            <summary>
+            Advances the enumerator to the next element of the collection.
+            </summary>
+            <returns>
+            true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">The collection was modified after the enumerator was created. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Takenet.Elephant.IExpirableKeyMap`2">
+            <summary>
+            Defines a map that supports key expiration.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IExpirableKeyMap`2.SetRelativeKeyExpirationAsync(`0,System.TimeSpan)">
+            <summary>
+            Sets the relative key expiration date.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="ttl">The TTL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.IExpirableKeyMap`2.SetAbsoluteKeyExpirationAsync(`0,System.DateTimeOffset)">
+            <summary>
+            Sets the absolute key expiration date.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="expiration">The expiration.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.IItemSetMap`2">
+            <summary>
+            Defines a <see cref="T:Takenet.Elephant.ISetMap`2"/> that allows to get a specific item in the set.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TItem">The type of the value.</typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IItemSetMap`2.GetItemOrDefaultAsync(`0,`1)">
+            <summary>
+            Gets the item in the set referenced by the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.IKeysMap`2">
+            <summary>
+            Defines a map service that provides direct access to the stored keys.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IKeysMap`2.GetKeysAsync">
+            <summary>
+            Gets all the keys stored in the map.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.IMap`2">
+            <summary>
+            Defines a mapper that provides fast access to a value using a key.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IMap`2.TryAddAsync(`0,`1,System.Boolean)">
+            <summary>
+            Tries to add an item.
+            </summary>₢
+            <param name="key">The item key</param>
+            <param name="value">The value.</param>
+            <param name="overwrite">Indicates if the item should be overwritten if the key already exists.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.IMap`2.GetValueOrDefaultAsync(`0)">
+            <summary>
+            Gets the value for the key if the exists or default for the type, if not.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>The mapper value if the key exists; otherwise, the <see cref="!:TValue"/> default value.</returns>
+        </member>
+        <member name="M:Takenet.Elephant.IMap`2.TryRemoveAsync(`0)">
+            <summary>
+            Tries the remove the item for the key if it exists on the map.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.IMap`2.ContainsKeyAsync(`0)">
+            <summary>
+            Checks if the key exists on the map.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.INumberMap`1">
+            <summary>
+            Represents a map for number values with specific features.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.INumberMap`1.IncrementAsync(`0)">
+            <summary>
+            Atomically increments the value of the key by one.
+            If the key does not exists, it will be created with the value 0.
+            </summary>
+            <param name="key">The item key.</param>
+            <returns>The number updated value.</returns>
+        </member>
+        <member name="M:Takenet.Elephant.INumberMap`1.IncrementAsync(`0,System.Int64)">
+            <summary>
+            Atomically increments the value of the key.
+            If the key does not exists, it will be created with the value 0.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns>The number updated value.</returns>
+        </member>
+        <member name="M:Takenet.Elephant.INumberMap`1.DecrementAsync(`0)">
+            <summary>
+            Atomically decrements the value of the key by one.
+            If the key does not exists, it will be created with the value 0.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>The number updated value.</returns>
+        </member>
+        <member name="M:Takenet.Elephant.INumberMap`1.DecrementAsync(`0,System.Int64)">
+            <summary>
+            Atomically decrements the value of the key.
+            If the key does not exists, it will be created with the value 0.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value"></param>
+            <returns>The number updated value.</returns>
+        </member>
+        <member name="T:Takenet.Elephant.IPropertyMap`2">
+            <summary>
+            Defines a map that allows the insertion and update of specific properties of the value document.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IPropertyMap`2.SetPropertyValueAsync``1(`0,System.String,``0)">
+            <summary>
+            Adds a property to a map item.
+            If the map item doesn't exists, it will be created.
+            If the property already exists, it will be overwritten.
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="key"></param>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.IPropertyMap`2.GetPropertyValueOrDefaultAsync``1(`0,System.String)">
+            <summary>
+            Gets a property value for the item in the specific key. 
+            If the item doesn't exists, returns the default property type value.
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="key"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.IPropertyMap`2.MergeAsync(`0,`1)">
+            <summary>
+            Merge the properties of the map item.
+            Properties with the default values of the property type will be ignored.
+            If the map item doesn't exists, it will be created.
+            </summary>
+            <param name="key">The map item key.</param>
+            <param name="value">The partial or complete item value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.IQueue`1">
+            <summary>
+            Defines a FIFO storage container.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IQueue`1.EnqueueAsync(`0)">
+            <summary>
+            Enqueues an item.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.IQueue`1.DequeueOrDefaultAsync">
+            <summary>
+            Dequeues an item from the queue, if available.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.IQueue`1.GetLengthAsync">
+            <summary>
+            Gets the number of items in the queue.
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Takenet.Elephant.IBlockingQueueMap`2" -->
+        <!-- Badly formed XML comment ignored for member "T:Takenet.Elephant.IQueueMap`2" -->
+        <member name="T:Takenet.Elephant.ISerializer`1">
+            <summary>
+            Defines a type serialization service.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.ISerializer`1.Serialize(`0)">
+            <summary>
+            Serializes an instance of <see cref="!:T"/> into a string.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.ISerializer`1.Deserialize(System.String)">
+            <summary>
+            Creates an instance of <see cref="!:T"/> from a string.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.ISet`1">
+            <summary>
+            Defines a set of unique items.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.ISet`1.AddAsync(`0)">
+            <summary>
+            Adds an item to the set. 
+            If the value already exists, it is overwritten.
+            </summary>
+            <param name="value">The value.</param>        
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.ISet`1.TryRemoveAsync(`0)">
+            <summary>
+            Tries to remove an existing item from the set.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.ISet`1.ContainsAsync(`0)">
+            <summary>
+            Checks if the value exists in the set.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.ISetMap`2">
+            <summary>
+            Represents a map that contains a set on unique items.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TItem"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.ISetMap`2.GetValueOrEmptyAsync(`0)">
+            <summary>
+            Gets the value for the key if the exists or a new set for the type, if not.
+            If the later, the item is automatically added to the map.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>An existing set if the key exists; otherwise, an empty set.</returns>
+        </member>
+        <member name="T:Takenet.Elephant.IUpdatableMap`2">
+            <summary>
+            Defines a map that supports value updates under specific conditions.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.IUpdatableMap`2.TryUpdateAsync(`0,`1,`1)">
+            <summary>
+            Updates the value of the key only if the existing value in the specified key equals to the specified old value.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="newValue">The new value.</param> 
+            <param name="oldValue">The comparison value for update.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.Memory.List`1">
+            <summary>
+            Implements the <see cref="!:ILIst&lt;T&gt;"/> interface using the <see cref="T:System.Collections.Generic.List`1"/> class.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Takenet.Elephant.Memory.Map`2">
+            <summary>
+            Implements the <see cref="T:Takenet.Elephant.IMap`2"/> interface using the <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2"/> class.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="T:Takenet.Elephant.Memory.Set`1">
+            <summary>
+            Implements the <see cref="T:Takenet.Elephant.ISet`1"/> interface using the <see cref="T:System.Collections.Generic.HashSet`1"/> class.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Takenet.Elephant.Memory.QueueMap`2">
+            <summary>
+            Implements the <see cref="T:Takenet.Elephant.IQueueMap`2"/> interface using the <see cref="T:Takenet.Elephant.Memory.Map`2"/> and <see cref="T:Takenet.Elephant.Memory.Queue`1"/> classes.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+        </member>
+        <member name="T:Takenet.Elephant.Memory.SetMap`2">
+            <summary>
+            Implements the <see cref="T:Takenet.Elephant.ISetMap`2"/> interface using the <see cref="T:Takenet.Elephant.Memory.Map`2"/> and <see cref="T:Takenet.Elephant.Memory.Set`1"/> classes.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TItem"></typeparam>
+        </member>
+        <member name="T:Takenet.Elephant.Memory.Queue`1">
+            <summary>
+            Implements the <see cref="T:Takenet.Elephant.IQueue`1"/> interface using the <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/> class.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.Memory.Queue`1.Clone">
+            <summary>
+            Clones this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.ObjectExtensions">
+            <summary>
+            Object util extensions.
+            </summary>
+        </member>
+        <member name="M:Takenet.Elephant.ObjectExtensions.AsCompletedTask``1(``0)">
+            <summary>
+            Creates a completed task for the value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.ObjectExtensions.IsDefaultValueOfType(System.Object,System.Type,System.Boolean)">
+            <summary>
+            Determines if the value is a default value of the specified type.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="ignoreIfEnum">if set to <c>true</c> [ignore if enum].</param>
+            <returns></returns>
+        </member>
+        <member name="T:Takenet.Elephant.QueryResult`1">
+            <summary>
+            Represents a query result.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Takenet.Elephant.QueueExtensions.CopyToAsync``1(Takenet.Elephant.IQueue{``0},Takenet.Elephant.IQueue{``0})">
+            <summary>
+            Copies the content of the source queue to the specified destination.
+            </summary>
+            <typeparam name="TItem">The type of the item.</typeparam>
+            <param name="source">The source queue.</param>
+            <param name="destination">The destination queue.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.QueueExtensions.MoveToAsync``1(Takenet.Elephant.IQueue{``0},Takenet.Elephant.IQueue{``0},Takenet.Elephant.IQueue{``0})">
+            <summary>
+            Moves the content of the source queue to the specified destinations.
+            </summary>
+            <typeparam name="TItem">The type of the item.</typeparam>
+            <param name="source">The source.</param>
+            <param name="destination">The destination queue.</param>
+            <param name="destination2">The alternative destination queue.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">
+            </exception>
+        </member>
+        <member name="M:Takenet.Elephant.SetExtensions.ToListAsync``1(Takenet.Elephant.ISet{``0})">
+            <summary>
+            Gets a list from the set.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="set">The set.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.SetMapExtensions.AddItemAsync``2(Takenet.Elephant.ISetMap{``0,``1},``0,``1)">
+            <summary>
+            Adds an item to the set.
+            If the key doesn't exists, it will be created.
+            If the value already exists, it is overwritten.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TItem">The type of the item.</typeparam>
+            <param name="setMap">The set map.</param>
+            <param name="key">The key.</param>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.SetMapExtensions.TryRemoveItemAsync``2(Takenet.Elephant.ISetMap{``0,``1},``0,``1)">
+            <summary>
+            Tries to remove an existing item from the set.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TItem">The type of the item.</typeparam>
+            <param name="setMap">The set map.</param>
+            <param name="key">The key.</param>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.SetMapExtensions.ContainsItemAsync``2(Takenet.Elephant.ISetMap{``0,``1},``0,``1)">
+            <summary>
+            Checks if the key exists and the value exists in the set.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TItem">The type of the item.</typeparam>
+            <param name="setMap">The set map.</param>
+            <param name="key">The key.</param>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.StringExtensions.Left(System.String,System.Int32)">
+            <summary>
+            Returns the first few characters of the string with a length
+            specified by the given parameter. If the string's length is less than the 
+            given length the complete string is returned. If length is zero or 
+            less an empty string is returned
+            </summary>
+            <param name="s">the string to process</param>
+            <param name="length">Number of characters to return</param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.StringExtensions.Format(System.String,System.Object)">
+            <summary>
+            Format the string using the source object to populate the named formats.
+            http://haacked.com/archive/2009/01/14/named-formats-redux.aspx/
+            </summary>
+            <param name="format"></param>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Takenet.Elephant.TaskUtil.CompletedTask">
+            <summary>
+            Provides a completed task.
+            </summary>
+        </member>
+        <member name="M:Takenet.Elephant.TypeExtensions.IsSimpleType(System.Type)">
+            <summary>
+            Determine whether a type is simple (String, Decimal, DateTime, etc) 
+            or complex (i.e. custom class with public properties and methods).
+            </summary>
+            <see cref="!:http://stackoverflow.com/questions/2442534/how-to-test-if-type-is-primitive"/>
+        </member>
+        <member name="M:Takenet.Elephant.TypeExtensions.GetDefaultValue(System.Type)">
+            <summary>
+            Gets the default value for the Type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.TypeUtil.GetParseFunc``1">
+            <summary>
+            Gets the Parse static method of a Type as a func.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.TypeUtil.GetParseFuncForType(System.Type)">
+            <summary>
+            Gets the Parse static  method of a Type as a func.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.TypeUtil.BuildGetAccessor(System.Reflection.PropertyInfo)">
+            <summary>
+            Build a delegate to get a property value of a class.
+            </summary>
+            <a href="http://stackoverflow.com/questions/10820453/reflection-performance-create-delegate-properties-c"/>
+            <param name="methodInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.TypeUtil.BuildGetAccessor(System.Reflection.MethodInfo)">
+            <summary>
+            Build a delegate to get a property value of a class.
+            </summary>
+            <a href="http://stackoverflow.com/questions/10820453/reflection-performance-create-delegate-properties-c"/>
+            <param name="methodInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.TypeUtil.BuildSetAccessor(System.Reflection.PropertyInfo)">
+            <summary>
+            Build a delegate to set a property value of a class.
+            </summary>
+            <a href="http://stackoverflow.com/questions/10820453/reflection-performance-create-delegate-properties-c"/>
+            <param name="methodInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.TypeUtil.BuildSetAccessor(System.Reflection.MethodInfo)">
+            <summary>
+            Build a delegate to set a property value of a class.
+            </summary>
+            <a href="http://stackoverflow.com/questions/10820453/reflection-performance-create-delegate-properties-c"/>
+            <param name="methodInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Takenet.Elephant.TypeUtil.GetDefaultValue``1">
+            <summary>
+            Gets the default value for the Type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

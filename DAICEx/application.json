@@ -1,0 +1,41 @@
+﻿{
+  "identifier": "",
+  "accessKey": "",
+  "messageReceivers": [
+    {
+      "type": "PlainTextMessageReceiver",
+      "mediaType": "text/plain"
+    },
+
+    //{
+    //  "mediaType": "text/plain",
+    //  "content": "Ping", //not case sensitive
+    //  //"state": "answer",
+    //  "response": {
+    //    "mediaType": "text/plain",
+    //    "plainContent": "Pong :3"
+    //  },
+    //  "outState": "idle"
+    //},
+    {
+      "type": "InvoiceStatusMessageReceiver",
+      "mediaType": "application/vnd.lime.invoice-status\\+json"
+    }
+  ],
+
+  "settings": {
+    "settings1": "value1",
+    "mpa": {
+      "WalletId": "7fa89cd8-b874-45b9-8253-0db0a8f80dba",
+      "Uri": "http://app.mpa.take.io/engine/mpa/",
+      "WaitBetweenSends": "1500",
+      "SessionIdentifier": "lucasmtraining",
+      "RequestTimeoutSeconds": "30",
+      "TranslatorSettings": { "MessengerCarouselSkipUrlCheck": true }
+    }
+  },
+  "settingsType" : "MySettings",
+  "startupType": "Startup",
+  "serviceProviderType": "ServiceProvider",
+  "schemaVersion": 2
+}

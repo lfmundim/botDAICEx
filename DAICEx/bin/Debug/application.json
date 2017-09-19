@@ -1,0 +1,174 @@
+﻿{
+  "identifier": "training",
+  "accessKey": "ZkNhemxuUWRkdlJHM05hY2wwcFo=",
+  "messageReceivers": [
+    {
+      "type": "PlainTextMessageReceiver",
+      "mediaType": "text/plain"
+    },
+
+    //{
+    //  "mediaType": "text/plain",
+    //  "content": "Ping", //not case sensitive
+    //  //"state": "answer",
+    //  "response": {
+    //    "mediaType": "text/plain",
+    //    "plainContent": "Pong :3"
+    //  },
+    //  "outState": "idle"
+    //},
+    {
+      "type": "InvoiceStatusMessageReceiver",
+      "mediaType": "application/vnd.lime.invoice-status\\+json"
+    }
+    //{
+    //  "mediaType": "text/plain",
+    //  "content": "Menu",
+    //  //"state": "idle",
+    //  "response": {
+    //    "mediaType": "application/vnd.lime.select+json",
+    //    "jsonContent": {
+    //      "text": "Oi! Eu sou o Chico Bomba, o ChatBot do DAICEx-UFMG! Em que posso ajudar?",
+    //      "options": [
+    //        {
+    //          "order": 1,
+    //          "text": "Camisetas do curso",
+    //          "type": "text/plain",
+    //          "value": "curso"
+    //        },
+    //        {
+    //          "order": 2,
+    //          "text": "Camisetas dos cientistas",
+    //          "type": "text/plain",
+    //          "value": "cientistas"
+    //        },
+    //        {
+    //          "order": 3,
+    //          "text": "Falar com alguém",
+    //          "type": "text/plain",
+    //          "value": "pessoa"
+    //        }
+    //      ]
+    //    }
+    //  },
+    //  "outState": "selecionarCurso"
+    //},
+
+    //{
+    //  "mediaType": "text/plain",
+    //  "content": "^(curso|camisetas do curso|1)$",
+    //  "state": "selecionarCurso",
+    //  "response": {
+    //    "mediaType": "application/vnd.lime.select+json",
+    //    "jsonContent": {
+    //      "text": "Qual curso?",
+    //      "options": [
+    //        {
+    //          "order": 1,
+    //          "text": "Ciência da Computação",
+    //          "type": "text/plain",
+    //          "value": "cc"
+    //        },
+    //        {
+    //          "order": 2,
+    //          "text": "Sistemas de Informação",
+    //          "type": "text/plain",
+    //          "value": "si"
+    //        },
+    //        {
+    //          "order": 3,
+    //          "text": "Matemática Computacional",
+    //          "type": "text/plain",
+    //          "value": "matcomp"
+    //        },
+    //        {
+    //          "order": 4,
+    //          "text": "Química",
+    //          "type": "text/plain",
+    //          "value": "quim"
+    //        },
+    //        {
+    //          "order": 5,
+    //          "text": "Química Tecnológica",
+    //          "type": "text/plain",
+    //          "value": "quimtec"
+    //        },
+    //        {
+    //          "order": 6,
+    //          "text": "Matemática",
+    //          "type": "text/plain",
+    //          "value": "mat"
+    //        },
+    //        {
+    //          "order": 7,
+    //          "text": "Física",
+    //          "type": "text/plain",
+    //          "value": "fis"
+    //        },
+    //        {
+    //          "order": 8,
+    //          "text": "Ciências Atuariais",
+    //          "type": "text/plain",
+    //          "value": "atuariais"
+    //        },
+    //        {
+    //          "order": 9,
+    //          "text": "Estatística",
+    //          "type": "text/plain",
+    //          "value": "est"
+    //        }
+    //      ]
+    //    }
+    //  },
+    //  "outState": "curso"
+    //},
+
+    //{
+    //  "mediaType": "text/plain",
+    //  "content": "^(imagem|uma imagem|2)$",
+    //  "response": {
+    //    "mediaType": "application/vnd.lime.media-link+json",
+    //    "jsonContent": {
+    //      "type": "image/jpeg",
+    //      "uri": "http://take.net/wp-content/themes/takenet/assets/img/black-logo.png",
+    //      "text": "Take One Step Beyond"
+    //    }
+    //  }
+    //},
+
+    //{
+    //  "mediaType": "text/plain",
+    //  "content": "^(data|a data atual|3)$",
+    //  "state": "answer",
+    //  "type": "DateMessageReceiver",
+    //  "settings": {
+    //    "culture": "pt-BR",
+    //    "message": "A data atual é {0}."
+    //  }
+    //},
+
+    //{
+    //  "priority": "100",
+    //  "response": {
+    //    "mediaType": "text/plain",
+    //    "plainContent": "That does not compute. Favor digitar 'Menu' para ver as opções."
+    //  }
+    //}
+  ],
+
+  "settings": {
+    "settings1": "value1",
+    "mpa": {
+      "WalletId": "7fa89cd8-b874-45b9-8253-0db0a8f80dba",
+      "Uri": "http://app.mpa.take.io/engine/mpa/",
+      "WaitBetweenSends": "1500",
+      "SessionIdentifier": "lucasmtraining",
+      "RequestTimeoutSeconds": "30",
+      "TranslatorSettings": { "MessengerCarouselSkipUrlCheck": true }
+    }
+  },
+  "settingsType" : "MySettings",
+  "startupType": "Startup",
+  "serviceProviderType": "ServiceProvider",
+  "schemaVersion": 2
+}

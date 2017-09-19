@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Takenet.Elephant.Msmq</name>
+    </assembly>
+    <members>
+        <member name="T:Takenet.Elephant.Msmq.MsmqQueue`1">
+            <summary>
+            <see cref="T:Takenet.Elephant.IBlockingQueue`1"/> implementation by using the Microsoft Message Queue API.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:Takenet.Elephant.IBlockingQueue`1" />
+        </member>
+        <member name="M:Takenet.Elephant.Msmq.MsmqQueue`1.#ctor(System.String,Takenet.Elephant.ISerializer{`0},System.Messaging.IMessageFormatter,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Takenet.Elephant.Msmq.MsmqQueue`1"/> class.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="serializer">The serializer.</param>
+            <param name="messageFormatter">The message formatter.</param>
+            <param name="recoverable">if set to <c>true</c> [recoverable].</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Takenet.Elephant.Msmq.NativeMethods">
+            <summary>
+            Source: https://github.com/hibernating-rhinos/rhino-esb/blob/master/Rhino.ServiceBus/Msmq/NativeMethods.cs
+            </summary>
+        </member>
+    </members>
+</doc>

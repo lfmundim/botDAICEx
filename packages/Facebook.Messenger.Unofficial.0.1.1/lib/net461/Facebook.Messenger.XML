@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Facebook.Messenger</name>
+    </assembly>
+    <members>
+        <member name="M:Facebook.Messenger.JsonCreationConverter`1.Create(System.Type,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Create an instance of objectType, based properties in the JSON object
+            </summary>
+            <param name="objectType">type of object expected</param>
+            <param name="jObject">
+            contents of JSON object that will be deserialized
+            </param>
+            <returns></returns>
+        </member>
+        <member name="P:Facebook.Messenger.MessengerAddress.Id">
+            <summary>
+            Gets or sets the ID of recipient
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Facebook.Messenger.MessengerAddress.PhoneNumber">
+            <summary>
+            Gets or sets the phone number of the recipient with the format +1(212)555-2368
+            </summary>
+            <value>
+            The phone number.
+            </value>
+        </member>
+        <member name="T:Facebook.Messenger.MessengerMessage">
+            <summary>
+            Implements the Facebook Messenger's message structure.
+            </summary>
+        </member>
+        <member name="T:Facebook.Messenger.MessengerObject">
+            <summary>
+            Defines the object delivered by the Facebook Messenger webhook.
+            </summary>
+        </member>
+        <member name="T:Facebook.Messenger.MessengerOptin">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/messenger-platform/webhook-reference/optins"/>
+            </summary>
+        </member>
+        <member name="T:Facebook.Messenger.MessengerRequest">
+            <summary>
+            Container class for holding Messenger objects and configurations.
+            It should not be serialized.
+            </summary>
+        </member>
+    </members>
+</doc>
